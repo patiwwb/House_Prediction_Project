@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"content="This is the description of my website">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>Document</title>
+</head>
+<body scroll="no" style="overflow: hidden">
+
+    <section class="border-bar">
+        <div class="container-bar">
+
+        </div>
+
+    </section>
+
+    <section class = "primary-section">
+
+
+        <h1 class="section1-name ">House Price Calculator</h1>
+        <div class="container-section1">
+            
+            <form class="myform" action="{{ url_for('predict')}}" method="post">
+                
+                <div class="input-fields">
+                    
+                    <input placeholder="Bedrooms" class="input-fiels" id="first" name="Bedrooms" type="number ">
+                    <input placeholder="Bathrooms" class="input-fiels" id="second" name="Bathrooms" required="required">
+                    <input placeholder="sqft_living" class="input-fiels" id="third" name="sqft_living" required="required">
+                    <input placeholder="sqft_lot" class="input-fiels" id="fourth" name="sqft_lot" required="required">
+                    <input  placeholder="floors" class="input-fiels" id="five" name="floors" required="required">
+                    <input placeholder="waterfront" class="input-fiels" id="six" name="waterfront" required="required">
+                    <input placeholder="view" class="input-fiels" id="seven" name="view" required="required">
+                    <input placeholder="condition" class="input-fiels" id="eight" name="condition" required="required">
+                    <input placeholder="sqft_above" class="input-fiels" id="nine" name="sqft_above" required="required">
+                    <input placeholder="sqft_basement" class="input-fiels" id="ten" name="sqft_basement" required="required">
+                    <input placeholder="year_built" class="input-fiels" id="eleven" name="year built" required="required">
+                    <input placeholder="year renovation" class="input-fiels" id="twelve" name="year renovation" required="required">
+                    <input placeholder="street" class="input-fiels" id="thirteen" name="street" required="required">
+                    <select placeholder="city" class="input-fiels"  name="city" id="cityid" required="required">
+                        <option class="choice-text" value="Seattle">Seattle</option>
+                        <option class="choice-text" value="Renton">Renton</option>
+                        <option class="choice-text" value="Redmond">Redmond</option>
+                        <option class="choice-text" value="Bellevue">Bellevue</option>
+                        <option class="choice-text" value="Kent">Kent</option>
+                        <option class="choice-text" value="Issaquah">Issaquah</option>
+                        <option class="choice-text" value="Auburn">Auburn</option>
+                        <option class="choice-text" value="Kirkland">Kirkland</option>
+                        <option class="choice-text" value="Sammamish">Sammamish</option>
+                    </select>
+                    <input placeholder="statezip" class="input-fiels" id="fourteen" name="statezip" required="required">
+                    <select placeholder="Country"  class="input-fiels"  name="Country" id="CountryID" required="required">
+                        <option class="choice-text" value="USA">USA</option>
+                        <option class="choice-text" value="Australia">Australia</option>
+                    </select>
+                </div>
+                <button class="button" id="sub" type="submit ">Calculate Price</button>
+                <br>
+            </form>
+            <h3>{{ prediction_text }}<h3></h3>
+        
+        </div>
+
+
+
+    </section>
+
+    <style>
+
+        body {
+        font-family: "Lato", sans-serif;
+        margin: 0px;
+        background-color: black;
+        padding: 0;
+        
+        }
+
+        .primary-section {
+        color:white;
+        /*background-image: url("city_image.jpg");*/ 
+        background-image: url({{ url_for('static', filename='city_image.jpg') }});/* Display image with FLask */
+        background-blend-mode: multiply;
+        background-size: cover;
+        padding-bottom: 30px;
+        height: 650px; 
+        margin-top: -20px;
+        }
+
+        .section1-name {
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        } 
+
+        .input-fields {
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        }
+
+        input::placeholder{
+        color: white;
+        }
+
+        .input-fiels {
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background: transparent;
+        border: 2px solid #f5efef;
+        justify-content: space-evenly;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-right: 20px;
+
+        }
+
+        .input-fiels:hover {
+        background-color: rgba(255, 255, 255, .3);
+        }
+
+        .choice-text {
+        color:black;
+        }
+
+        .button {
+        justify-content: center;
+        color: white;
+        background-color: rgba(255, 255, 255, .1);
+        border-radius: 10px;
+        border-width: 2px;
+        border-color: rgb(56, 219, 16);
+        width: 200px;
+        height: 50px;
+        cursor: pointer;
+        text-align: center;
+        margin-left: 45%;
+        margin-top: 30px;
+        }
+
+        .button:hover{
+        background-color: rgba(38, 231, 13, 0.1);
+        }
+
+        .border-bar {
+        top: 0px;
+        
+        background-color: black;
+        background-image: url("Images/code-background.jpg");
+        background-blend-mode: multiply;
+        background-size: cover;
+        height: 30px;
+        width: 100%;
+        }
+
+        h3 {
+        margin-left: 45%;
+        color: white;
+        }
+
+    </style>
+
+</body>
+</html>

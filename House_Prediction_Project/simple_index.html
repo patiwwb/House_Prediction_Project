@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div style="color:wheat">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Predictive analysis</h2>
+            <h3>Bedrooms</h3>
+            <input id="first" name="Bedrooms" type="number ">
+            <h3>Bathrooms</h3><br><input id="second" name="Bathrooms" required="required">
+            <h3>sqft_living</h3><input id="third" name="sqft_living" required="required">
+            <h3>sqft_lot</h3><br><input id="fourth" name="sqft_lot" required="required">
+            <h3>floors</h3><br><input id="five" name="floors" required="required">
+            <h3>waterfront</h3><br><input id="six" name="waterfront" required="required">
+            <h3>view</h3><br><input id="seven" name="view" required="required">
+            <h3>condition</h3><br><input id="eight" name="condition" required="required">
+            <h3>sqft_above</h3><br><input id="nine" name="sqft_above" required="required">
+            <h3>sqft_basement</h3><br><input id="ten" name="sqft_basement" required="required">
+            <h3>year built</h3><br><input id="eleven" name="year built" required="required">
+            <h3>year renovation</h3><br><input id="twelve" name="year renovation" required="required">
+            <h3>street</h3><br><input id="thirteen" name="street" required="required">
+            <h3>city</h3><br><select name="city" id="cityid" required="required">
+                <option value="Seattle">Seattle</option>
+                <option value="Renton">Renton</option>
+                <option value="Redmond">Redmond</option>
+                <option value="Bellevue">Bellevue</option>
+                <option value="Kent">Kent</option>
+                <option value="Issaquah">Issaquah</option>
+                <option value="Auburn">Auburn</option>
+                <option value="Kirkland">Kirkland</option>
+                <option value="Sammamish">Sammamish</option>
+            </select>
+            <h3>statezip</h3><br><input id="fourteen" name="statezip" required="required">
+            <h3>Country</h3><br><select name="Country" id="CountryID" required="required">
+                <option value="USA">USA</option>
+                <option value="Australia">Australia</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculate Price</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+
+
+
+
+    <style>
+        body {
+            background-color: black;
+            
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
